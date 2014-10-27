@@ -1,4 +1,22 @@
-def intro_sequence(windowSurface, mainClock, currentObjects):
+"""
+Author: rossbot
+
+intro sequence for 2038
+"""
+
+import pygame, sys, time, random
+# import constants from pygame
+from pygame.locals import *
+
+# set up the colors
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+WHITE = (255, 255, 255)
+GRAY = (150, 150, 150)
+
+def intro_sequence(windowSurface=pygame.display.set_mode((1024, 760), 0, 32), mainClock=pygame.time.Clock(), currentObjects=[]):
     introString ="""It is the year 2038. Contrary to predictions by Moore's Law that computing power would ultimately cap by 2020, the performance of computing machines has continued to grow steadily with no ceiling in sight. 
 
 Concurrent to the continuing advancement of computers, humankind has begun to experience a rapid, albeit self-regulated, evolution. Neural implants, readily available prosthetic body parts, finally realized stem cell treatments. 
@@ -79,3 +97,10 @@ def drawText(surface, text, color, rect, font, aa=False, bkg=None):
  
     return text
 
+if __name__ == '__main__':
+    print "this is the intro sequence"
+
+    # initialize pygame
+    pygame.init()
+    pygame.display.set_caption('intro')
+    intro_sequence()
